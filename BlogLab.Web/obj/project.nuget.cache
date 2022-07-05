@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "84vP/NHgeMS+Dxmf1KusabxLdiEZWTxKzfDEAiuwcwWYSASkMMFVQ0cYFWZCbBJYqNwJev8PfI/ou762VdH5Cg==",
+  "dgSpecHash": "5kcZ3BMgD0n64mUZ5dNNZi9UXF9J1ikVluoV1pnh1YdPDeCJ4IOT43VsV7EKma8mWPZ5hZMXMZi9sY9jStvJoQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\MONSTER\\Documents\\Projects\\BlogLab\\BlogLab.Web\\BlogLab.Web.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\MONSTER\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.16\\microsoft.netcore.app.host.win-x64.5.0.16.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

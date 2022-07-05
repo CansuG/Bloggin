@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlogLabModels.Blog
 {
-    public class PageResults<T>
+    public class PagedResults<T>
     {
         public IEnumerable<T> Items { get; set; }
 
