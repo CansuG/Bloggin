@@ -1,5 +1,5 @@
 ﻿using BlogLabModels.Account;
-using BlogLabRepository;
+using BlogLab.Repository;
 using Microsoft.AspNetCore.Identity;
 
 namespace BlogLabIdentity
