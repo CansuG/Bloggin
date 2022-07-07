@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "190HU/uZhvQOVwQsTgqqo91etCQVRqMQp1fd4QAxH1zfcXF+jSCaKxvcIC9U/Jp7UstVFJQ5i0v1w1DrmXDHGg==",
+  "dgSpecHash": "+S1SLbHmdpR2O3iMhStmxqPHHXZ92bR5lILKZj4AT0nff/hOYZFeC21VZIQMu7isd38vm5ofDYi9pgqwWQibtA==",
   "success": true,
   "projectFilePath": "C:\\Users\\MONSTER\\Documents\\Projects\\BlogLab\\BlogLab.Web\\BlogLab.Web.csproj",
   "expectedPackageFiles": [
@@ -49,7 +49,8 @@
     "C:\\Users\\MONSTER\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",
     "C:\\Users\\MONSTER\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\MONSTER\\.nuget\\packages\\system.spatial\\5.6.4\\system.spatial.5.6.4.nupkg.sha512",
-    "C:\\Users\\MONSTER\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
+    "C:\\Users\\MONSTER\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
+    "C:\\Users\\MONSTER\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.16\\microsoft.netcore.app.host.win-x64.5.0.16.nupkg.sha512"
   ],
   "logs": [
     {

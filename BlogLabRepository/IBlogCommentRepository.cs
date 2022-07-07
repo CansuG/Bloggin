@@ -1,4 +1,6 @@
 ﻿using BlogLabModels.BlogComment;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BlogLab.Repository
 {

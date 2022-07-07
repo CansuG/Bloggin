@@ -1,4 +1,6 @@
 ﻿using BlogLabModels.Photo;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BlogLab.Repository
 {
