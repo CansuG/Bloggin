@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlogLabModels.Blog
 {
-   public  class Blog : BlogCreate
+    public  class Blog : BlogCreate
     {
         public string Username { get; set; }
 

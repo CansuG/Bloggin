@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLogLab.Services
+namespace BlogLab.Services
 {
     public interface ITokenService
     {

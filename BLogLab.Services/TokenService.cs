@@ -9,11 +9,10 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLogLab.Services
+namespace BlogLab.Services
 {
     public class TokenService : ITokenService
     {
-
         private readonly SymmetricSecurityKey _key;
         private readonly string _issuer;
         public TokenService(IConfiguration config)
@@ -41,5 +40,6 @@ namespace BLogLab.Services
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
     }
 }

@@ -1,9 +1,4 @@
 ﻿using BlogLabModels.BlogComment;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlogLab.Repository
 {
@@ -11,7 +6,7 @@ namespace BlogLab.Repository
     {
         public Task<BlogComment> UpsertAsync(BlogCommentCreate blogCommentCreate, int applicationUserId);
 
-        public Task<List<BlogComment>> GelAllAsync(int blogId);
+        public Task<List<BlogComment>> GetAllAsync(int blogId);
 
         public Task<BlogComment> GetAsync(int blogCommentId);
 
