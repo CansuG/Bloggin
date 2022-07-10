@@ -20,7 +20,7 @@ namespace BlogLabIdentity
         }
         public async Task<IdentityResult> CreateAsync(ApplicationUserIdentity user, CancellationToken cancellationToken)
         {
-          return await _accountRepository.CreateAsync(user, cancellationToken);
+            return await _accountRepository.CreateAsync(user, cancellationToken);
         }
 
         public async Task<ApplicationUserIdentity> FindByNameAsync(string normalizedUserName, CancellationToken cancellationToken)

@@ -123,7 +123,7 @@ CREATE TYPE [dbo].[BlogType] AS TABLE
 CREATE TYPE [dbo].[BlogCommentType] AS TABLE
 (
 	[BlogCommentId] INT NOT NULL,
-	[ParentBlogCommentId] INT NOT NULL,
+	[ParentBlogCommentId] INT NULL,
 	[BlogId] INT NOT NULL,
 	[Content] VARCHAR(300) NOT NULL
 )
@@ -294,7 +294,7 @@ AS
 			Content,
 			PhotoId
 		FROM
-			@BLog
+			@Blog
 	)AS SOURCE
 	ON
 	(
@@ -362,12 +362,6 @@ AS
 			ON t1.[BlogCommentId] = t2.[BlogCommentId];
 GO
 
-IF EXISTS ( SELECT * FROM sys.procedures WHERE NAME='BlogComment_Get')
-BEGIN 
-	DROP PROC BlogComment_Get
-END 
-GO
-
 CREATE PROCEDURE [dbo].[BlogComment_Get]
 	@BlogCommentId INT
 AS
@@ -413,17 +407,18 @@ CREATE PROCEDURE [dbo].[BlogComment_Upsert]
 	@BlogComment BlogCommentType READONLY,
 	@ApplicationUserId INT
 AS
-	MERGE INTO [dbo].[BlogComment] TARGET 
-	USING(
-		SELECT
+
+	MERGE INTO [dbo].[BlogComment] TARGET
+	USING (
+		SELECT 
 			[BlogCommentId],
 			[ParentBlogCommentId],
 			[BlogId],
 			[Content],
 			@ApplicationUserId [ApplicationUserId]
 		FROM
-			@BlogComment
-	)AS SOURCE
+		@BlogComment
+	) AS SOURCE
 	ON
 	(
 		TARGET.[BlogCommentId] = SOURCE.[BlogCommentId] AND TARGET.[ApplicationUserId] = SOURCE.[ApplicationUserId]
@@ -431,21 +426,22 @@ AS
 	WHEN MATCHED THEN
 		UPDATE SET
 			TARGET.[Content] = SOURCE.[Content],
-			TARGET.[UpdateDate] = getdate()
+			TARGET.[UpdateDate] = GETDATE()
 	WHEN NOT MATCHED BY TARGET THEN
-		INSERT(
+		INSERT (
 			[ParentBlogCommentId],
 			[BlogId],
 			[ApplicationUserId],
 			[Content]
 		)
 		VALUES
-		(
+		(	
 			SOURCE.[ParentBlogCommentId],
 			SOURCE.[BlogId],
 			SOURCE.[ApplicationUserId],
 			SOURCE.[Content]
 		);
+
 	SELECT CAST(SCOPE_IDENTITY() AS INT);
 GO
 

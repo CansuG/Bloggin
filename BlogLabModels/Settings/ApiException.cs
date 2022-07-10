@@ -1,10 +1,11 @@
 ﻿using Newtonsoft.Json;
 
-namespace BlogLabModels.Settings
+namespace BlogLab.Models.Exception
 {
     public class ApiException
     {
         public int StatusCode { get; set; }
+
         public string Message { get; set; }
 
         public override string ToString()

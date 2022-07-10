@@ -29,14 +29,19 @@ namespace BlogLab.Web.Controllers
         {
             int applicationUserId = int.Parse(User.Claims.First(i => i.Type == JwtRegisteredClaimNames.NameId).Value);
 
-            var photo = await _photoRepository.GetAsync(blogCreate.PhotoId);
 
-            if (photo.ApplicationUserId != applicationUserId)
+            if (blogCreate.PhotoId.HasValue)
             {
-                return BadRequest("You did not upload the photo.");
+                var photo = await _photoRepository.GetAsync(blogCreate.PhotoId.Value);
+
+                if (photo.ApplicationUserId != applicationUserId)
+                {
+                    return BadRequest("You did not upload the photo.");
+                }
             }
 
-            var blog = _blogRepository.UpsertAsync(blogCreate, applicationUserId);
+
+            var blog = await _blogRepository.UpsertAsync(blogCreate, applicationUserId);
 
             return Ok(blog);
         }

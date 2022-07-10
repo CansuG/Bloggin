@@ -71,14 +71,13 @@ namespace BlogLab.Repository
         public async Task<BlogComment> UpsertAsync(BlogCommentCreate blogCommentCreate, int applicationUserId)
         {
             var dataTable = new DataTable();
-
             dataTable.Columns.Add("BlogCommentId", typeof(int));
             dataTable.Columns.Add("ParentBlogCommentId", typeof(int));
             dataTable.Columns.Add("BlogId", typeof(int));
             dataTable.Columns.Add("Content", typeof(string));
 
             dataTable.Rows.Add(
-                blogCommentCreate.BlogId, 
+                blogCommentCreate.BlogCommentId,
                 blogCommentCreate.ParentBlogCommentId,
                 blogCommentCreate.BlogId,
                 blogCommentCreate.Content);
@@ -91,11 +90,15 @@ namespace BlogLab.Repository
 
                 newBlogCommentId = await connection.ExecuteScalarAsync<int?>(
                     "BlogComment_Upsert",
-                    new { BlogComment = dataTable.AsTableValuedParameter("dbo.BLogCommentType"), ApplicationUserId = applicationUserId },
+                    new
+                    {
+                        BlogComment = dataTable.AsTableValuedParameter("dbo.BlogCommentType"),
+                        ApplicationUserId = applicationUserId
+                    },
                     commandType: CommandType.StoredProcedure);
             }
 
-            newBlogCommentId = newBlogCommentId ?? blogCommentCreate.BlogCommentId;
+            newBlogCommentId ??= blogCommentCreate.BlogCommentId;
 
             BlogComment blogComment = await GetAsync(newBlogCommentId.Value);
 
