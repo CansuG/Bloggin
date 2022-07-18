@@ -1,5 +1,5 @@
-﻿using BlogLab.Services;
-using BlogLabModels.Account;
+﻿using BlogLab.Models.Account;
+using BlogLab.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

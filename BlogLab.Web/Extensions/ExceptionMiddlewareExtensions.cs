@@ -1,5 +1,4 @@
-﻿using BlogLab.Models.Exception;
-using BlogLabModels.Settings;
+﻿using BlogLab.Models.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;

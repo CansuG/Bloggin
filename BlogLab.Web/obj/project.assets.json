@@ -1641,18 +1641,18 @@
     },
     "BlogLab.Identity/1.0.0": {
       "type": "project",
-      "path": "../BlogLabIdentity/BlogLab.Identity.csproj",
-      "msbuildProject": "../BlogLabIdentity/BlogLab.Identity.csproj"
+      "path": "../BlogLab.Identity/BlogLab.Identity.csproj",
+      "msbuildProject": "../BlogLab.Identity/BlogLab.Identity.csproj"
     },
     "BlogLab.Models/1.0.0": {
       "type": "project",
-      "path": "../BlogLabModels/BlogLab.Models.csproj",
-      "msbuildProject": "../BlogLabModels/BlogLab.Models.csproj"
+      "path": "../BlogLab.Models/BlogLab.Models.csproj",
+      "msbuildProject": "../BlogLab.Models/BlogLab.Models.csproj"
     },
     "BlogLab.Repository/1.0.0": {
       "type": "project",
-      "path": "../BlogLabRepository/BlogLab.Repository.csproj",
-      "msbuildProject": "../BlogLabRepository/BlogLab.Repository.csproj"
+      "path": "../BlogLab.Repository/BlogLab.Repository.csproj",
+      "msbuildProject": "../BlogLab.Repository/BlogLab.Repository.csproj"
     },
     "BlogLab.Services/1.0.0": {
       "type": "project",
@@ -1701,17 +1701,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\MONSTER\\Documents\\Projects\\BlogLab\\BlogLab.Identity\\BlogLab.Identity.csproj": {
+              "projectPath": "C:\\Users\\MONSTER\\Documents\\Projects\\BlogLab\\BlogLab.Identity\\BlogLab.Identity.csproj"
+            },
+            "C:\\Users\\MONSTER\\Documents\\Projects\\BlogLab\\BlogLab.Models\\BlogLab.Models.csproj": {
+              "projectPath": "C:\\Users\\MONSTER\\Documents\\Projects\\BlogLab\\BlogLab.Models\\BlogLab.Models.csproj"
+            },
+            "C:\\Users\\MONSTER\\Documents\\Projects\\BlogLab\\BlogLab.Repository\\BlogLab.Repository.csproj": {
+              "projectPath": "C:\\Users\\MONSTER\\Documents\\Projects\\BlogLab\\BlogLab.Repository\\BlogLab.Repository.csproj"
+            },
             "C:\\Users\\MONSTER\\Documents\\Projects\\BlogLab\\BlogLab.Services\\BlogLab.Services.csproj": {
               "projectPath": "C:\\Users\\MONSTER\\Documents\\Projects\\BlogLab\\BlogLab.Services\\BlogLab.Services.csproj"
-            },
-            "C:\\Users\\MONSTER\\Documents\\Projects\\BlogLab\\BlogLabIdentity\\BlogLab.Identity.csproj": {
-              "projectPath": "C:\\Users\\MONSTER\\Documents\\Projects\\BlogLab\\BlogLabIdentity\\BlogLab.Identity.csproj"
-            },
-            "C:\\Users\\MONSTER\\Documents\\Projects\\BlogLab\\BlogLabModels\\BlogLab.Models.csproj": {
-              "projectPath": "C:\\Users\\MONSTER\\Documents\\Projects\\BlogLab\\BlogLabModels\\BlogLab.Models.csproj"
-            },
-            "C:\\Users\\MONSTER\\Documents\\Projects\\BlogLab\\BlogLabRepository\\BlogLab.Repository.csproj": {
-              "projectPath": "C:\\Users\\MONSTER\\Documents\\Projects\\BlogLab\\BlogLabRepository\\BlogLab.Repository.csproj"
             }
           }
         }

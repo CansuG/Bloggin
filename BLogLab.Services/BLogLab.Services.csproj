@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlogLabModels\BlogLab.Models.csproj" />
+    <ProjectReference Include="..\BlogLab.Models\BlogLab.Models.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,3 @@
-using BlogLabModels.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -6,8 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using BlogLab.Services;
 using BlogLab.Repository;
-using BlogLabModels.Account;
-using BlogLabIdentity;
+using BlogLab.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -15,6 +13,8 @@ using System.Text;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using BlogLab.Web.Extensions;
+using BlogLab.Models.Settings;
+using BlogLab.Models.Account;
 
 namespace BlogLab.Web
 {

@@ -11,9 +11,9 @@ CREATE TABLE ApplicationUser(
 	PRIMARY KEY(ApplicationUserId)
 )
 
-CREATE INDEX [IX_ApplicationUserId_NormalizedUsername] on [dbo].[ApplicationUser] ([NormalizedUsername])
+CREATE INDEX [IX_ApplicationUser_NormalizedUsername] on [dbo].[ApplicationUser] ([NormalizedUsername])
 
-CREATE INDEX [IX_ApplicationUserId_NormalizedEmail] on [dbo].[ApplicationUser] ([NormalizedEmail])
+CREATE INDEX [IX_ApplicationUser_NormalizedEmail] on [dbo].[ApplicationUser] ([NormalizedEmail])
 
 SELECT Username, NormalizedUsername, Email FROM ApplicationUser
 
@@ -362,6 +362,12 @@ AS
 			ON t1.[BlogCommentId] = t2.[BlogCommentId];
 GO
 
+IF EXISTS ( SELECT * FROM sys.procedures WHERE NAME='BlogComment_Get')
+BEGIN 
+	DROP PROC BlogComment_Get
+END 
+GO
+
 CREATE PROCEDURE [dbo].[BlogComment_Get]
 	@BlogCommentId INT
 AS
@@ -504,3 +510,8 @@ AS
 
 	SELECT CAST(SCOPE_IDENTITY() AS INT);
 GO
+
+SELECT * FROM ApplicationUser;
+SELECT * FROM Blog;
+SELECT * FROM BlogComment;
+SELECT * FROM Photo;

@@ -1,4 +1,4 @@
-﻿using BlogLabModels.Settings;
+﻿using BlogLab.Models.Settings;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Http;

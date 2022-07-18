@@ -1,4 +1,4 @@
-﻿using BlogLabModels.Account;
+﻿using BlogLab.Models.Account;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
