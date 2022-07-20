@@ -8,7 +8,7 @@ export class BlogComment{
         public username: string,
         public publishDate: Date,
         public updateDate: Date,
-        public parentBlogCOmmentId?: number
+        public parentBlogCommentId?: number
     ){}
 
 }
