@@ -1,0 +1,20 @@
+.content {
+    min-height: calc(100vh - 100px);
+    padding-bottom: 30px;
+}
+
+.footer {
+    text-align:center;
+    background: #f5f5f5;
+    line-height: 50px;
+    padding: 0 20px;
+}
+
+.social > a {
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+}
