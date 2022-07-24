@@ -4,6 +4,7 @@ import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common
 import { BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import { CollapseModule} from 'ngx-bootstrap/collapse';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 
 import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
@@ -61,7 +62,8 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
       positionClass: 'toast-bottom-right'
     }),
     BsDropdownModule.forRoot() ,
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    TypeaheadModule.forRoot()
   ],
   providers: [
     HttpClient,

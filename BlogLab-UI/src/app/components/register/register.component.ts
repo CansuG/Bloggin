@@ -72,9 +72,9 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     let applicationUserCreate: ApplicationUserCreate = new ApplicationUserCreate(
-      this.registerForm.get("username")?.value,
-      this.registerForm.get("password")?.value,
-      this.registerForm.get("email")?.value,
+      this.registerForm.get("username")!.value,
+      this.registerForm.get("password")!.value,
+      this.registerForm.get("email")!.value,
       this.registerForm.get("fullname")?.value,
     );
 

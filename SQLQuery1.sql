@@ -174,13 +174,17 @@ CREATE PROCEDURE [dbo].[Blog_Delete]
 AS
 
 	UPDATE [dbo].[BlogComment]
-	SET [ActiveInd] = CONVERT(BIT, 0)
-	WHERE [BlogId] = @BlogId;
+	SET 
+		[ActiveInd] = CONVERT(BIT, 0),
+		[UpdateDate] = GETDATE()
+	WHERE 
+		[BlogId] = @BlogId;
 
 	UPDATE [dbo].[Blog]
 	SET
 		[PhotoId] = NULL,
-		[ActiveInd] = CONVERT(BIT, 0)
+		[ActiveInd] = CONVERT(BIT, 0),
+		[UpdateDate] = GETDATE()
 	WHERE 
 		[BlogId] = @BlogId
 GO
