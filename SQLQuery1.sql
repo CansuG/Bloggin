@@ -213,23 +213,24 @@ CREATE PROCEDURE [dbo].[Blog_GetAll]
 	@PageSize INT
 AS
 	SELECT 
-		[BlogId],
-		[ApplicationUserId],
-		[Username],
-		[Title],
-		[PhotoId],
-		[PublishDate],
-		[UpdateDate]
-	FROM 
+		[BlogId]
+	   ,[ApplicationUserId]
+       ,[Username]
+       ,[Title]
+       ,[Content]
+       ,[PhotoId]
+       ,[PublishDate]
+       ,[UpdateDate]
+	 FROM
 		[aggregate].[Blog] t1
-	WHERE
+	 WHERE
 		t1.[ActiveInd] = CONVERT(BIT, 1)
-	ORDER BY
+	 ORDER BY
 		t1.[BlogId]
-	OFFSET @Offset ROWS
-	FETCH NEXT @PageSize ROWS ONLY;
+	 OFFSET @Offset ROWS
+	 FETCH NEXT @PageSize ROWS ONLY;
 
-	SELECT COUNT(*) FROM [aggregate].[Blog] t1 WHERE t1.[ActiveInd] = CONVERT(BIT, 1);
+	 SELECT COUNT(*) FROM [aggregate].[Blog] t1 WHERE t1.[ActiveInd] = CONVERT(BIT, 1);
 GO
 
 CREATE PROCEDURE [dbo].[Blog_GetAllFamous]

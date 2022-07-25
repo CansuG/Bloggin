@@ -1,7 +1,7 @@
 export class BlogCommentViewModel{
 
     constructor(
-        public parentBlogCommentId: number | null,
+        public parentBlogCommentId: number | null | undefined,
         public blogCommentId: number,
         public blogId: number,
         public content: string,

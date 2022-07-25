@@ -33,4 +33,3 @@ export class BlogCardComponent implements OnInit {
     this.router.navigate([`/blogs/${blogId}`])
   }
 }
-
