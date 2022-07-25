@@ -1,1 +1,23 @@
-<p>famous-blogs works!</p>
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <h1 class="display-4">Most Discussed Blogs</h1>
+    </div>
+</div>
+
+<ng-template [ngIf]="famousBlogs!.length > 0" [ngIfElse]="noblogs">
+    <div class="container mt-5">
+        <div class="row row-cols-sm-1 row-cols-md-3 g-5">
+            <div class="col" *ngFor="let famousBlog of famousBlogs">
+                <app-blog-card [blog]="famousBlog"></app-blog-card>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #noblogs>
+    <div class="mt-4">
+        <div class="d-flex justify-content-center">
+            <h3 class="text-dark">There are no blogs being discussed...</h3>
+        </div>
+    </div>
+</ng-template>
