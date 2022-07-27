@@ -87,11 +87,11 @@ namespace BlogLab.Web.Controllers
             var foundBlog = await _blogRepository.GetAsync(blogId);
 
             if (foundBlog == null) return BadRequest("Blog does not exist");
-            
-            if(foundBlog.ApplicationUserId == applicationUserId)
+
+            if (foundBlog.ApplicationUserId == applicationUserId)
             {
                 var affectedRows = await _blogRepository.DeleteAsync(blogId);
-               
+
                 return Ok(affectedRows);
             }
             else

@@ -65,4 +65,8 @@ export class DashboardComponent implements OnInit {
   createBlog() {
     this.router.navigate(['/dashboard/-1']);
   }
+
+  viewBlog(blogId: number){
+    this.router.navigate([`/blogs/${blogId}`])
+  }
 }

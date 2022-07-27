@@ -39,6 +39,11 @@
                         {{ userBlog.content | summary:90 }}
                     </td>
                     <td>
+
+                        <button class="btn btn-success d-inline me-1" (click)="viewBlog(userBlog.blogId)">
+                            View
+                        </button>
+
                         <button class="btn btn-info d-inline me-1" (click)="editBlog(userBlog.blogId)">
                             Edit
                         </button>

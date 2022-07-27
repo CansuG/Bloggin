@@ -12,9 +12,9 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System;
 using System.IdentityModel.Tokens.Jwt;
-using BlogLab.Web.Extensions;
 using BlogLab.Models.Settings;
 using BlogLab.Models.Account;
+using BlogLab.Web.Extensions;
 
 namespace BlogLab.Web
 {
@@ -43,7 +43,11 @@ namespace BlogLab.Web
 
             services.AddIdentityCore<ApplicationUserIdentity>(opt =>
             {
-                opt.Password.RequireNonAlphanumeric = false;
+                var allowed = opt.User.AllowedUserNameCharacters
+                  + "abcçdefgğhıijklmnoöprsştuüvyzxqwABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZXQW-._@+0123456789";
+                opt.User.AllowedUserNameCharacters = allowed;
+                opt.Password.RequireNonAlphanumeric = true;
+
             })
                 .AddUserStore<UserStore>()
                 .AddDefaultTokenProviders()
@@ -97,7 +101,7 @@ namespace BlogLab.Web
 
             app.UseRouting();
 
-            if(env.IsDevelopment())
+            if (env.IsDevelopment())
             {
                 app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             }

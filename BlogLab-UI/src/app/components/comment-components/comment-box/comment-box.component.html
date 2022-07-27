@@ -10,7 +10,8 @@
             rows="3"
             required
             minlength="10"
-            maxlength="300">
+            maxlength="300"
+            placeholder="Leave a comment here!">
         </textarea>
 
         <div *ngIf="!!userCommentContent.errors?.['required']" class="invalid-feedback">

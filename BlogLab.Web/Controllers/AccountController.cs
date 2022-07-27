@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using System.Text;
+using Microsoft.AspNetCore.Html;
+using System.IO;
 
 namespace BlogLab.Web.Controllers
 {
@@ -16,8 +19,8 @@ namespace BlogLab.Web.Controllers
         private readonly SignInManager<ApplicationUserIdentity> _signInManager;
 
         public AccountController(
-            ITokenService tokenService, 
-            UserManager<ApplicationUserIdentity> userManager, 
+            ITokenService tokenService,
+            UserManager<ApplicationUserIdentity> userManager,
             SignInManager<ApplicationUserIdentity> signInManager)
         {
             _tokenService = tokenService;
@@ -28,6 +31,7 @@ namespace BlogLab.Web.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<ApplicationUser>> Register(ApplicationUserCreate applicationUserCreate)
         {
+
             var applicationUserIdentity = new ApplicationUserIdentity
             {
                 Username = applicationUserCreate.Username,
@@ -37,7 +41,7 @@ namespace BlogLab.Web.Controllers
 
             var result = await _userManager.CreateAsync(applicationUserIdentity, applicationUserCreate.Password);
 
-            if(result.Succeeded)
+            if (result.Succeeded)
             {
                 applicationUserIdentity = await _userManager.FindByNameAsync(applicationUserCreate.Username);
 
@@ -61,14 +65,14 @@ namespace BlogLab.Web.Controllers
         {
             var applicationUserIdentity = await _userManager.FindByNameAsync(applicationUserLogin.Username);
 
-            if(applicationUserIdentity != null)
+            if (applicationUserIdentity != null)
             {
                 var result = await _signInManager.CheckPasswordSignInAsync(
                     applicationUserIdentity,
                     applicationUserLogin.Password,
                     false);
 
-                if(result.Succeeded)
+                if (result.Succeeded)
                 {
                     ApplicationUser applicationUser = new ApplicationUser()
                     {

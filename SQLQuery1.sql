@@ -2,11 +2,11 @@ CREATE DATABASE BlogDB;
 USE BlogDB;
 CREATE TABLE ApplicationUser(
 	ApplicationUserId INT NOT NULL IDENTITY(1,1),
-	Username VARCHAR(20) NOT NULL,
-	NormalizedUsername VARCHAR(20) NOT NULL,
+	Username NVARCHAR(20) NOT NULL,
+	NormalizedUsername NVARCHAR(20) NOT NULL,
 	Email VARCHAR(30) NOT NULL,
 	NormalizedEmail VARCHAR(30) NOT NULL,
-	Fullname VARCHAR(30) NULL,
+	Fullname NVARCHAR(30) NULL,
 	PasswordHash NVARCHAR(MAX) NOT NULL,
 	PRIMARY KEY(ApplicationUserId)
 )
@@ -101,7 +101,7 @@ CREATE TYPE [dbo].[AccountType] AS TABLE
 	[NormalizedUsername] VARCHAR(20) NOT NULL,
 	[Email] VARCHAR(30) NOT NULL,
 	[NormalizedEmail] VARCHAR(30) NOT NULL,
-	[Fullname] VARCHAR(30) NOT NULL,
+	[Fullname] VARCHAR(30) NULL,
 	[PasswordHash] NVARCHAR(MAX) NOT NULL
 )
 
@@ -520,3 +520,29 @@ SELECT * FROM ApplicationUser;
 SELECT * FROM Blog;
 SELECT * FROM BlogComment;
 SELECT * FROM Photo;
+
+ALTER TABLE [ApplicationUser]
+ALTER COLUMN [Username] nvarchar(20) not null;
+
+ALTER TABLE [ApplicationUser]
+ALTER COLUMN [Fullname] nvarchar(20) null;
+
+ALTER TABLE [ApplicationUser]
+ALTER COLUMN [NormalizedUsername] nvarchar(20) not null;
+
+SELECT @@LANGUAGE
+SET LANGUAGE turkish
+
+SET DATEFORMAT dmy
+DECLARE @Tarih DATETIME
+SET @Tarih = '31/12/2006'
+SELECT @Tarih AS Tarih
+
+SELECT SERVERPROPERTY('collation')
+
+ALTER DATABASE BlogDB COLLATE Turkish_CI_AS
+
+ALTER TABLE ApplicationUser ALTER COLUMN Username NVARCHAR(20) COLLATE Turkish_CS_AI NOT NULL;
+ALTER TABLE ApplicationUser ALTER COLUMN Fullname NVARCHAR(20) COLLATE Turkish_CS_AI NULL;
+ALTER TABLE ApplicationUser ALTER COLUMN NormalizedUsername NVARCHAR(20) COLLATE Turkish_CS_AI NOT NULL;
+

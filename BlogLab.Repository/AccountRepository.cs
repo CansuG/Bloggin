@@ -42,8 +42,8 @@ namespace BlogLab.Repository
             {
                 await connection.OpenAsync(cancellationToken);
 
-                await connection.ExecuteAsync("Account_Insert", 
-                    new {Account = dataTable.AsTableValuedParameter("dbo.AccountType") }, commandType: CommandType.StoredProcedure);
+                await connection.ExecuteAsync("Account_Insert",
+                    new { Account = dataTable.AsTableValuedParameter("dbo.AccountType") }, commandType: CommandType.StoredProcedure);
             }
 
             return IdentityResult.Success;

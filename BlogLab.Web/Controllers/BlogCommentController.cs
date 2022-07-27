@@ -51,10 +51,10 @@ namespace BlogLab.Web.Controllers
 
             if (foundBlogComment == null) return BadRequest("Comment does not exist");
 
-            if(foundBlogComment.ApplicationUserId == applicationUserId)
+            if (foundBlogComment.ApplicationUserId == applicationUserId)
             {
                 var affectedRows = await _blogCommentRepository.DeleteAsync(blogCommentId);
-               
+
                 return Ok(affectedRows);
             }
             else

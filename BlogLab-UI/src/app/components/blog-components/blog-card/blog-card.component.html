@@ -1,4 +1,4 @@
-<div class="card" style="width: 20rem;">
+<div class="card bg-light h-100 " style="max-width: 20rem;">
     <img *ngIf="!!blogPhotoUrl" class="card-img-top img-fluid" src="{{blogPhotoUrl}}">
     <div class="card-body">
         <h4 class="card-title">
@@ -7,9 +7,9 @@
 
         <p class="card-text" *ngIf="!!blogPhotoUrl">{{blog.content | summary:100}}</p>
 
-        <p class="card-text" *ngIf="!blogPhotoUrl">{{blog.content | summary:300}}</p>
+        <p class="card-text" *ngIf="!blogPhotoUrl">{{blog.content | summary:400}}</p>
 
-        <button class="btn btn-xs bg-primary text-light" (click)="readMore(blog.blogId)">
+        <button class="btn btn-xs bg-dark text-light" (click)="readMore(blog.blogId)">
             Read More
         </button>
 

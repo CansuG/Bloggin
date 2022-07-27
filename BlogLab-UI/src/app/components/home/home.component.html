@@ -8,7 +8,7 @@
                         Start writing your <strong>first blog</strong> and <strong>publish today</strong>
                     </h1>
 
-                    <div class="d-flex">
+                    <div class="d-flex" *ngIf="!accountService.isLoggedIn()">
                         <div class="p-4 align-self-start">
                             <i class="fas fa-check fa-2x text-light"></i>
                         </div>
@@ -37,7 +37,7 @@
 
                 </div>
 
-                <div class="col-lg-4 mt-5">
+                <div class="col-lg-4 mt-5" *ngIf="!accountService.isLoggedIn()">
                     <div class="card bg-muted text-center card-form">
                         <div class="card-body">
 

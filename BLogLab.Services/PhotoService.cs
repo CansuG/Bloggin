@@ -42,7 +42,7 @@ namespace BlogLab.Services
             return uploadResult;
         }
 
-        public async Task<DeletionResult> DeletePhotosAsync(string publicId)
+        public async Task<DeletionResult> DeletePhotoAsync(string publicId)
         {
             var deletionParams = new DeletionParams(publicId);
 

@@ -49,7 +49,7 @@ namespace BlogLab.Repository
                     new
                     {
                         Offset = (blogPaging.Page - 1) * blogPaging.PageSize,
-                        PageSize = blogPaging.PageSize
+                        blogPaging.PageSize
                     },
                     commandType: CommandType.StoredProcedure))
                 {

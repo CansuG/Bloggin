@@ -20,8 +20,8 @@ namespace BlogLab.Web.Controllers
         private readonly IPhotoService _photoService;
 
         public PhotoController(
-            IPhotoRepository photoRepository, 
-            IBlogRepository blogRepository, 
+            IPhotoRepository photoRepository,
+            IBlogRepository blogRepository,
             IPhotoService photoService)
         {
             _photoRepository = photoRepository;
@@ -47,7 +47,7 @@ namespace BlogLab.Web.Controllers
             };
 
             var photo = await _photoRepository.InsertAsync(photoCreate, applicationUserId);
-            
+
             return Ok(photo);
         }
 
@@ -79,9 +79,9 @@ namespace BlogLab.Web.Controllers
 
             var foundPhoto = await _photoRepository.GetAsync(photoId);
 
-            if(foundPhoto != null)
+            if (foundPhoto != null)
             {
-                if(foundPhoto.ApplicationUserId == applicationUserId)
+                if (foundPhoto.ApplicationUserId == applicationUserId)
                 {
                     var blogs = await _blogRepository.GetAllByUserIdAsync(applicationUserId);
 
@@ -89,12 +89,13 @@ namespace BlogLab.Web.Controllers
 
                     if (usedInBlog) return BadRequest("Cannot remove photo as it is being used in published blog(s).");
 
-                    var deleteResult = await _photoService.DeletePhotosAsync(foundPhoto.PublicId);
+                    var deleteResult = await _photoService.DeletePhotoAsync(foundPhoto.PublicId);
 
-                    if(deleteResult.Error != null) return BadRequest(deleteResult.Error);
+                    if (deleteResult.Error != null) return BadRequest(deleteResult.Error.Message);
 
-                    var affectRows = await _photoRepository.DeletetAsync(foundPhoto.PhotoId);
+                    var affectedRows = await _photoRepository.DeletetAsync(foundPhoto.PhotoId);
 
+                    return Ok(affectedRows);
                 }
                 else
                 {

@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { BlogCreate } from 'src/app/models/blog/blog-create.model';
 import { Blog } from 'src/app/models/blog/blog.model';
 import { Photo } from 'src/app/models/photo/photo.model';
+import { AccountService } from 'src/app/services/account.service';
 import { BlogService } from 'src/app/services/blog.service';
 import { PhotoService } from 'src/app/services/photo.service';
 
@@ -21,6 +22,7 @@ export class BlogEditComponent implements OnInit {
   userPhotos: Photo[] = [];
 
   constructor(
+    public accountService: AccountService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private blogService: BlogService,
@@ -49,7 +51,9 @@ export class BlogEditComponent implements OnInit {
     });
 
     this.photoService.getByApplicationUserId().subscribe(userPhotos => {
-      this.userPhotos = userPhotos;
+      
+        this.userPhotos = userPhotos;
+      
     });
 
     if (!!blogId && blogId !== -1) {
@@ -61,7 +65,7 @@ export class BlogEditComponent implements OnInit {
 
   getPhoto(photoId: number) {
     for (let i=0; i<this.userPhotos.length; i++) {
-      if (this.userPhotos[i].photoId === photoId) {
+      if (this.userPhotos[i].photoId === photoId ) {
         return this.userPhotos[i];
       } 
     }

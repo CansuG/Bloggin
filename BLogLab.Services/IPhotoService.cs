@@ -12,6 +12,6 @@ namespace BlogLab.Services
     {
         public Task<ImageUploadResult> AddPhotosAsync(IFormFile file);
 
-        public Task<DeletionResult> DeletePhotosAsync(string publicId);
+        public Task<DeletionResult> DeletePhotoAsync(string publicId);
     }
 }

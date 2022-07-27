@@ -25,7 +25,7 @@ namespace BlogLab.Identity
 
         public async Task<ApplicationUserIdentity> FindByNameAsync(string normalizedUserName, CancellationToken cancellationToken)
         {
-            return await _accountRepository.GetByUsernameAsync(normalizedUserName, cancellationToken); 
+            return await _accountRepository.GetByUsernameAsync(normalizedUserName, cancellationToken);
         }
 
         public Task<IdentityResult> DeleteAsync(ApplicationUserIdentity user, CancellationToken cancellationToken)
