@@ -11,7 +11,7 @@
 
         <div class="mb-3">
             <input type="text" [ngClass]="{'is-invalid' : hasErrors('fullname') && isTouched('fullname'),
-                            'is-valid' : !hasErrors('fullname') && isTouched('fullname')}"
+                                           'is-valid' : !hasErrors('fullname') && isTouched('fullname')}"
                    class="form-control form-control-lg" formControlName="fullname" placeholder="Full Name">
 
             <div *ngIf="hasError('fullname', 'minlength') || hasError('fullname', 'maxlength')" class="invalid-feedback">
@@ -23,7 +23,7 @@
             <input type="text" [ngClass]="{'is-invalid' : hasErrors('username') && isTouched('username'),
                                            'is-valid' : !hasErrors('username') && isTouched('username')}"
                    class="form-control form-control-lg" formControlName="username" placeholder="Username"
-                   ng-pattern="/[\p{L}-]+/ug">
+                   >
 
             <div *ngIf="hasError('username', 'required')" class="invalid-feedback">
                 Username is required!

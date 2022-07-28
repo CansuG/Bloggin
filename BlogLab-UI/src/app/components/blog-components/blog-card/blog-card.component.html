@@ -7,7 +7,9 @@
 
         <p class="card-text" *ngIf="!!blogPhotoUrl">{{blog.content | summary:100}}</p>
 
-        <p class="card-text" *ngIf="!blogPhotoUrl">{{blog.content | summary:400}}</p>
+        <p class="card-text d-lg-none" *ngIf="!blogPhotoUrl">{{blog.content | summary:200}}</p>
+
+        <p class="card-text d-none d-lg-block" *ngIf="!blogPhotoUrl">{{blog.content | summary:400}}</p>
 
         <button class="btn btn-xs bg-dark text-light" (click)="readMore(blog.blogId)">
             Read More

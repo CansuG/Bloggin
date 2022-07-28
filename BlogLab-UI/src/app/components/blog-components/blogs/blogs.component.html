@@ -6,7 +6,7 @@
 
 <ng-template [ngIf]="pagedBlogResult!.items.length > 0" [ngIfElse]="noblogs">
     <div class="container mt-5 blogs">
-        <div class="row row-cols-1 row-cols-md-3 g-5">
+        <div class="row row-cols-sm-1 row-cols-md-3 g-5">
             <div class="col" *ngFor="let blog of pagedBlogResult.items">
                 <app-blog-card [blog]="blog"></app-blog-card>
             </div>

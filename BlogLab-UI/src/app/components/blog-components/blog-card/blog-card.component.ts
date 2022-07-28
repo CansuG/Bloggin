@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Blog } from 'src/app/models/blog/blog.model';
 import { PhotoService } from 'src/app/services/photo.service';
@@ -20,6 +20,7 @@ export class BlogCardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
     if (!!this.blog.photoId) {
       this.photoService.get(this.blog.photoId).subscribe(photo => {
         if (!!photo) {
@@ -32,4 +33,5 @@ export class BlogCardComponent implements OnInit {
   readMore(blogId: number) {
     this.router.navigate([`/blogs/${blogId}`])
   }
+
 }

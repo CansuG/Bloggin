@@ -17,7 +17,7 @@ export class BlogsComponent implements OnInit {
   constructor(
     private blogService: BlogService
   ) { }
-
+  
   ngOnInit(): void {
     this.loadPagedBlogResult(1, 6);
   }
