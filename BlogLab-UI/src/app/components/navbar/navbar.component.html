@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark flex-column flex-md-row bd-navbar" role="navigation">
+<nav class="navbar navbar-expand-lg navbar-dark flex-column flex-md-row bd-navbar shadow" role="navigation">
     <div class="container">
 
-        <a class="navbar-brand" routerLink='/' routerLinkActive='active'>Bloggin</a>
+        <a class="navbar-brand text-dark" routerLink='/' routerLinkActive='active'>Bloggin</a>
 
         <button class="navbar-toggler"
             data-toggle="collapse"
@@ -14,9 +14,9 @@
 
         <div class="collapse navbar-collapse" id="navbarNav" id="collapseBasic" [collapse]="isCollapsed">
 
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink='/blogs' routerLinkActive='active'>Blogs</a>
+            <ul class="navbar-nav">
+                <li class="nav-item mx-4 px-3 rounded-pill shadow-sm">
+                    <a class="nav-link text-dark" routerLink='/blogs' routerLinkActive='active'>Blogs</a>
                 </li>
 
                 <li class="nav-item" *ngIf="!accountService.isLoggedIn()">
@@ -30,12 +30,12 @@
                     id="button-animated"
                     dropdownToggle
                     type="button"
-                    class="btn btn-myColor dropdown-toggle"
+                    class="btn dropdown-toggle rounded-pill shadow-sm"
                     aria-controls="dropdown-animated">
-                    Welcome {{ accountService.currentUserValue.username }}! <span class="caret"></span>
+                    Welcome {{ accountService.currentUserValue.username }} ! <span class="caret"></span>
                 </button>
 
-                <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu"
+                <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu bG" role="menu"
                     aria-labelledby="button-animated">
                     <li role="menuitem">
                         <a class="dropdown-item" routerLink='/photo-album'>Photo Album</a>

@@ -9,7 +9,6 @@ import { LoginComponent } from './components/login/login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PhotoAlbumComponent } from './components/photo-album/photo-album.component';
 import { AuthGuard } from './guards/auth.guard';
-import { BlogComment } from './models/blog-comment/blog-comment.model';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,8 +19,9 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'dashboard/:id', component: BlogEditComponent, canActivate: [AuthGuard]},
   {path: 'not-found', component: NotFoundComponent},
-  {path: '**', redirectTo: '/not-found'},
-
+  {path: '**', redirectTo: '/not-found'}
+  
+  
 ];
 
 @NgModule({

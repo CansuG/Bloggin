@@ -1,3 +1,29 @@
 .blogs {
     min-height: calc(100vh - 400px);
 }
+
+#myBG {
+    background: url(../../../../assets/pexels-life-of-pix-7919.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 1000px;
+}
+
+#myBG .dark-overlay {
+    top: 1;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    min-height: 1000px;
+}
+
+.btnColor{
+    background: #5f9f8d;
+}
+
+::ng-deep ul > li.active > a {
+    background-color: #5f9f8d !important;
+    border-color: whitesmoke !important;
+}
+

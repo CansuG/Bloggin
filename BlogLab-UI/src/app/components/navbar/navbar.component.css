@@ -1,8 +1,22 @@
 .bd-navbar{
     min-height: 4rem;
-    background-color:mediumpurple;
+    background: url(../../../assets/pexels-min-an-1406866.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-.btn-myColor{
-    background-color:mediumpurple;
+.myColor{
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+.navbar-brand {
+    background: url(../../../assets/pexels-min-an-1406866.jpg) center / contain no-repeat;
+    width: 200px;
+    font-size: 200%;
+}
+
+.bG{
+    background: url(../../../assets/pexels-min-an-1406866.jpg);
 }

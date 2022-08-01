@@ -1,0 +1,10 @@
+.btnColor{
+    background: #5f9f8d;
+}
+
+input {
+    border: 0;
+    outline: 0;
+    border-bottom: 2px solid #6EB2C4;
+    color: #ccc;
+}

@@ -31,7 +31,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 
-
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -54,6 +54,7 @@ import { ErrorInterceptor } from './interceptors/error.interceptor';
     RegisterComponent
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

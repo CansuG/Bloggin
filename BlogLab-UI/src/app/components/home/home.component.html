@@ -2,7 +2,7 @@
     <div class="dark-overlay">
         <div class="home-inner container">
             <div class="row">
-                <div class="col-lg-8 d-none d-lg-block mt-5">
+                <div class="col-lg-7 d-none d-lg-block mt-5">
 
                     <h1 class="display-4 text-light">
                         Start writing your <strong>first blog</strong> and <strong>publish today</strong>
@@ -37,13 +37,11 @@
 
                 </div>
 
-                <div class="col-lg-4 mt-5" *ngIf="!accountService.isLoggedIn()">
-                    <div class="card bg-muted text-center card-form">
-                        <div class="card-body">
+                <div class="col-lg-5 mt-5" *ngIf="!accountService.isLoggedIn()">
+                    <div class="card text-center card-form shadow bg-white" style="border-radius: 20px;">
 
-                            <app-register></app-register>
+                        <app-register></app-register>
 
-                        </div>
                     </div>
                 </div>
 

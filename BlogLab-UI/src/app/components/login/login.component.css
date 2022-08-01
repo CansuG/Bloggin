@@ -1,0 +1,43 @@
+.sbmit{
+    border: none;
+    padding: 15px 70px;
+    border-radius: 8px;
+    display: block;
+    margin: auto;
+    margin-top: 120px;
+    background: #5f9f8d;
+    color: #fff;
+    font-weight: bold;
+    -webkit-box-shadow: 0px 9px 15px -11px rgb(95, 159, 141);
+    -moz-box-shadow: 0px 9px 15px -11px rgb(95, 159, 141);
+    box-shadow: 0px 9px 15px -11px rgb(95, 159, 141)
+}
+
+.bg-pic{
+    background: url(../../../assets/photo_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.top_link a {
+    color: #452A5A;
+    font-weight: 400;
+}
+
+.outer{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.left{
+    background: linear-gradient(-45deg, #dcd7e0, #fff);
+}
+
+.corner{
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}

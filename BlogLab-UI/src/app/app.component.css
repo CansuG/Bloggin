@@ -1,13 +1,16 @@
+body {
+    position: relative;
+    min-height: 100%;
+    min-height: 100vh;
+}
+
 .content {
     min-height: calc(100vh - 100px);
-    padding-bottom: 30px;
 }
 
 .footer {
     text-align:center;
     background: #f5f5f5;
-    line-height: 50px;
-    padding: 0 20px;
 }
 
 .social > a {
@@ -17,4 +20,5 @@
     line-height:40px;
     display:inline-block;
     text-align:center;
+    color: #5f9f8d;
 }

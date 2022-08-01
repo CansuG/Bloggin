@@ -1,0 +1,20 @@
+#myBG {
+    background: url(/../../../assets/pexels-life-of-pix-7919.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 1000px;
+}
+
+#myBG .dark-overlay {
+    top: 1;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    min-height: 1000px;
+}
+
+.tableBG{
+    background-color:whitesmoke;
+    border-radius: 30px;
+}

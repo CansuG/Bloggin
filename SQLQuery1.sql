@@ -104,6 +104,7 @@ CREATE TYPE [dbo].[AccountType] AS TABLE
 	[Fullname] VARCHAR(30) NULL,
 	[PasswordHash] NVARCHAR(MAX) NOT NULL
 )
+GO
 
 CREATE TYPE [dbo].[PhotoType] AS TABLE
 (
@@ -111,6 +112,7 @@ CREATE TYPE [dbo].[PhotoType] AS TABLE
 	[ImageUrl] VARCHAR(250) NOT NULL,
 	[Description] VARCHAR(30) NOT NULL
 )
+GO
 
 CREATE TYPE [dbo].[BlogType] AS TABLE
 (
@@ -119,6 +121,7 @@ CREATE TYPE [dbo].[BlogType] AS TABLE
 	[Content] VARCHAR(MAX) NOT NULL,
 	[PhotoId] INT NULL
 )
+GO
 
 CREATE TYPE [dbo].[BlogCommentType] AS TABLE
 (
