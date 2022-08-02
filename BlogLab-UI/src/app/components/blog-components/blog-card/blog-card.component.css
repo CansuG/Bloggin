@@ -1,16 +1,21 @@
 .btn{
     color:lightseagreen;
     background-color:#fff;
-    border-color:#285e8e; /*set the color you want here*/
+    border-color:#285e8e; 
 }
 .btn:hover, .btn:focus, .btn:active, .btn.active, .open>.dropdown-toggle.btn {
     color: #fff;
     background-color:#B0C4DE;
-    border-color: #285e8e; /*set the color you want here*/
+    border-color: #285e8e; 
 }
 
 .cardBorder{
     border-radius:20px;
+}
+
+.cardBorder:hover{
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .photoBorder{

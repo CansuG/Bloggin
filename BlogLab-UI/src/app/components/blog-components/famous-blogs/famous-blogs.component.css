@@ -1,0 +1,7 @@
+#myBG {
+    background: url(../../../../assets/pexels-teona-swift-6913376.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 1000px;
+}

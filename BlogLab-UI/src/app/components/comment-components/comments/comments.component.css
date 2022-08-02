@@ -7,5 +7,43 @@
 }
 
 .comment-box {
-    border-left: 1px solid rgba(0,0,0,.125);
+    border-left: 1px solid;
+    border-radius:25px;
+    border-color: #285e8e;
+}
+
+.commentBG{
+    background-color:#f7efff;
+    border-radius:20px;
+}
+
+.btn-danger{
+    color:red;
+    background-color:#fff;
+}
+.btn-danger:hover, .btn:focus, .btn:active, .btn.active {
+    color: #fff;
+    background-color:salmon;
+}
+
+.btn-primary{
+    color:cornflowerblue;
+    background-color:#fff;
+    border-color:#285e8e; 
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+    color: #fff;
+    background-color:ecornflowerblu;
+    border-color: #285e8e; 
+}
+
+.btn-info{
+    color:#5f9f8d;
+    background-color:#fff;
+    border-color:#5f9f8d; 
+}
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active{
+    color: #fff;
+    background-color:#5f9f8d;
+    border-color: #5f9f8d; 
 }

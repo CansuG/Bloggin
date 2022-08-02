@@ -1,13 +1,15 @@
-<div class="card bg-light h-100 cardBorder" style="max-width: 20rem;">
+<div class="card h-100 cardBorder" style="max-width: 20rem;">
     <img *ngIf="!!blogPhotoUrl" class="card-img-top img-fluid photoBorder" src="{{blogPhotoUrl}}">
     <div class="card-body">
         <h4 class="card-title">
             {{blog.title}}
         </h4>
 
-        <p class="card-text" *ngIf="!!blogPhotoUrl">{{blog.content | summary:150}}</p>
+        <p class="card-text d-lg-none" *ngIf="!!blogPhotoUrl">{{blog.content | summary:100}}</p>
 
-        <p class="card-text d-lg-none" *ngIf="!blogPhotoUrl">{{blog.content | summary:200}}</p>
+        <p class="card-text d-none d-lg-block" *ngIf="!!blogPhotoUrl">{{blog.content | summary:150}}</p>
+
+        <p class="card-text d-lg-none" *ngIf="!blogPhotoUrl">{{blog.content | summary:300}}</p>
 
         <p class="card-text d-none d-lg-block" *ngIf="!blogPhotoUrl">{{blog.content | summary:400}}</p>
 

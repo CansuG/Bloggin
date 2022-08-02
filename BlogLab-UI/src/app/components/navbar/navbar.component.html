@@ -19,8 +19,8 @@
                     <a class="nav-link text-dark" routerLink='/blogs' routerLinkActive='active'>Blogs</a>
                 </li>
 
-                <li class="nav-item" *ngIf="!accountService.isLoggedIn()">
-                    <a class="nav-link" routerLink='/login' routerLinkActive='active'>Login</a>
+                <li class="nav-item mx-4 px-3 rounded-pill shadow-sm" *ngIf="!accountService.isLoggedIn()">
+                    <a class="nav-link text-dark" routerLink='/login' routerLinkActive='active'>Login</a>
                 </li>
             </ul>
 
@@ -30,7 +30,7 @@
                     id="button-animated"
                     dropdownToggle
                     type="button"
-                    class="btn dropdown-toggle rounded-pill shadow-sm"
+                    class="btn dropdown-toggle rounded-pill shadow-sm mx-4 px-3"
                     aria-controls="dropdown-animated">
                     Welcome {{ accountService.currentUserValue.username }} ! <span class="caret"></span>
                 </button>

@@ -1,16 +1,14 @@
-<div class="container">
+<div class="container m-4">
 
     <div *ngFor="let comment of comments">
 
-        <div class="row mb-3 d-block comment-box">
+        <div class="row mb-3 d-block comment-box col-lg-9 offset-lg-1">
 
-            <div class="card p-3">
+            <div class="card p-3 commentBG">
 
                 <p class="font-italic">{{comment.username}} said on {{comment.updateDate | date:'medium'}}</p>
 
-                <blockquote *ngIf="!comment.isEditable && !comment.isReplying" class="blockquote">
-                    {{comment.content}}
-                </blockquote>
+                <p *ngIf="!comment.isEditable && !comment.isReplying"> {{comment.content}} </p>
 
                 <app-comment-box
                     *ngIf="(!!comment.isEditable && accountService.givenUserIsLoggedIn(comment.username)) || !!comment.isReplying"
